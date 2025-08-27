@@ -44,7 +44,7 @@ function renderEventos(list) {
 
 // Fetch de eventos, opcionalmente filtrando por comuna
 async function fetchEvents(params = 'todas') {
-  let url = 'fetch("https://pokeinfoapi.onrender.com/events/")';
+ let url = "https://pokeinfoapi.onrender.com/events/";
   if (params !== 'todas') {
     url = `https://pokeinfoapi.onrender.com/events/porcomuna?city=${encodeURIComponent(params)}`;
   }
