@@ -1,6 +1,6 @@
 // Cargar comunas en el dropdown
 async function cargarComunas() {
-  const responseComunas = await fetch('https://pokeinfoapi.onrender.com/comunas');
+  const responseComunas = await fetch('https://pokeinfoapi.onrender.com/comunas/');
   const data = await responseComunas.json();
   
   const comunas = data.comunas || [];  // fallback si no hay comunas
@@ -44,7 +44,7 @@ function renderEventos(list) {
 
 // Fetch de eventos, opcionalmente filtrando por comuna
 async function fetchEvents(params = 'todas') {
- let url = "https://pokeinfoapi.onrender.com/events";
+ let url = "https://pokeinfoapi.onrender.com/events/";
   if (params !== 'todas') {
     url = `https://pokeinfoapi.onrender.com/events/porcomuna?city=${encodeURIComponent(params)}`;
   }
